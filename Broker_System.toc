@@ -1,0 +1,14 @@
+## Interface: 60000
+
+## Title: Broker: System
+## Notes: Shows latency. Click for addon list. Right-click for game menu.
+## Author: Phanx
+## X-Email: addons@phanx.net
+## X-Copyright: Copyright (c) 2014 Phanx. All rights reserved.
+## X-Website: https://github.com/Phanx/Broker_System
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+
+Addon.lua
