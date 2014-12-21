@@ -103,9 +103,4 @@ local function Update()
 	C_Timer.After(30, Update)
 end
 
-f:RegisterEvent("PLAYER_LOGIN")
-f:SetScript("OnEvent", function()
-	f:UnregisterAllEvents()
-	f:SetScript("OnEvent", nil)
-	C_Timer.After(1, Update)
-end)
+C_Timer.After(15, Update)
