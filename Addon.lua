@@ -39,9 +39,11 @@ elseif GetLocale() == "zhTW" then
 	TEXT    = "|cff%s%d毫秒|r"
 end
 
-local function GetLatencyText()
+local function GetLatencyText(which)
 	local _, _, latencyHome, latencyWorld = GetNetStats()
-	local latency = latencyHome > latencyWorld and latencyHome or latencyWorld
+	local latency = which == 1 and latencyHome
+		or which == 2 and latencyWorld
+		or latencyHome > latencyWorld and latencyHome or latencyWorld
 	if latency > PERFORMANCEBAR_MEDIUM_LATENCY then
 		return format(TEXT, "ff3333", latency)
 	elseif latency > PERFORMANCEBAR_LOW_LATENCY then
@@ -59,7 +61,10 @@ local obj = LibStub("LibDataBroker-1.1"):NewDataObject(LATENCY, {
 	text = UNKNOWN,
 	OnTooltipShow = function(tooltip)
 		tooltip:AddLine(LATENCY, 1, 1, 1)
-		tooltip:AddLine(GetLatencyText())
+		tooltip:AddDoubleLine("Home:", "World:")
+		tooltip:AddDoubleLine(GetLatencyText(1), GetLatencyText(2))
+		tooltip:AddLine("Click to show the addon list.")
+		tooltip:AddLine("Right-click to show the main menu.")
 	end,
 	OnClick = function(self, button)
 		if button == "RightButton" then
