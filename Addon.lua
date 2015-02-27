@@ -1,10 +1,8 @@
 --[[--------------------------------------------------------------------
 	Broker_System
 	Shows latency. Click for game menu. Right-click to reload UI.
-	Copyright (c) 2014 Phanx. All rights reserved.
-	See the accompanying README and LICENSE files for more information.
-	http://www.wowinterface.com/downloads/info-BrokerSystem.html
-	http://www.curse.com/addons/wow/broker-saved
+	Copyright (c) 2014-2015 Phanx. All rights reserved.
+	https://github.com/Phanx/Broker_System
 ----------------------------------------------------------------------]]
 
 local NORMAL_ICON   = "Interface\\Buttons\\UI-MicroButton-MainMenu-Up"
